@@ -38,3 +38,4 @@ To automatically Build and run the application:
 2. After downloading it , go to the CI-and-testing-pipeline folder and right click it click the open Git Bash here 
 and execute the command " ./build.sh" 
 3. After executing the command, it will automatically downloads all the deployable package and automatically executes the unit test in the command prompt;
+4. The command prompt will show how many success and fails the unit test will have.
