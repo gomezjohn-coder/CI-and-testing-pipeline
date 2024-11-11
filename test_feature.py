@@ -32,4 +32,26 @@ class TestCalculator(unittest.TestCase):
         self.assertEqual(subtract(10, 5), 10)  # Fail intentionally
 
 if __name__ == '__main__':
-    unittest.main(verbosity=2)
+    runner = unittest.TextTestRunner(verbosity=2)
+    result = runner.run(unittest.TestLoader().loadTestsFromTestCase(TestCalculator))
+
+    # Custom output formatting
+    print("\nTest Results Summary:")
+
+    # Failures: List only the failed tests
+    failure_count = len(result.failures) + len(result.errors)
+    for test, err in result.failures:
+        print(f"FAIL: {test}")
+    for test, err in result.errors:
+        print(f"ERROR: {test}")
+
+    # Successes: Calculate success count
+    success_count = result.testsRun - failure_count
+    print(f"\nTotal Successes: {success_count}")
+    print(f"Total Failures: {failure_count}")
+
+    # Final summary
+    if result.wasSuccessful():
+        print("\nAll tests passed!")
+    else:
+        print(f"\nSome tests failed. Total failures: {failure_count}")
