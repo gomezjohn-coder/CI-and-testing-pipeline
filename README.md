@@ -32,9 +32,9 @@ Before you can run the build script, ensure you have the following installed:
 To automatically Build and run the application: 
 
 1. **Clone the Repository**:
-   First, download the repository using Git. Open **Git Bash** or your terminal and run the following command:
+   Download the repository using Git. Open **Git Bash** or your terminal and run the following command:
    ```bash
    git clone https://github.com/gomezjohn-coder/CI-and-testing-pipeline
-2. After downloading it , go to the CI-and-testing-pipeline and right click it click the open Git Bash here 
+2. After downloading it , go to the CI-and-testing-pipeline folder and right click it click the open Git Bash here 
 and execute the command " ./build.sh" 
 3. After executing the command, it will automatically downloads all the deployable package and automatically executes the unit test in the command prompt;
