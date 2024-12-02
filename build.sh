@@ -23,9 +23,18 @@ if ! command -v pyinstaller &>/dev/null; then
     pip install pyinstaller
 fi
 
+# Full path to pyinstaller executable
+PYINSTALLER_PATH="C:/Program Files/Python37/Scripts/pyinstaller.exe"
+
+# Check if pyinstaller is available at the specified path
+if [ ! -f "$PYINSTALLER_PATH" ]; then
+    echo "PyInstaller not found at $PYINSTALLER_PATH. Please check your installation."
+    exit 1
+fi
+
 # Create the standalone executable using PyInstaller
 echo "Building the application..."
-pyinstaller --onefile test_feature.py
+"$PYINSTALLER_PATH" --onefile test_feature.py
 
 # Check if the build was successful
 if [ $? -eq 0 ]; then
