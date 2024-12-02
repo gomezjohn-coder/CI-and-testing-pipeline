@@ -29,9 +29,21 @@ def create_package():
     )
     subprocess.run([sys.executable, 'setup.py', 'sdist', 'bdist_wheel'])
 
+    # After building the package, run the test feature file directly
+    test_file = 'test_feature.py'  # Make sure this file exists in your repo
+    if os.path.exists(test_file):
+        print(f"Running {test_file}...")
+        result = subprocess.run([sys.executable, test_file])
+        if result.returncode == 0:
+            print(f"{test_file} executed successfully.")
+        else:
+            print(f"Error executing {test_file}. Please check the error messages above.")
+    else:
+        print(f"Error: {test_file} not found.")
+
 if __name__ == '__main__':
     # Run tests
     run_tests()
-    
+
     # Create the deployable package
     create_package()
