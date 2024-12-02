@@ -1,17 +1,5 @@
 #!/bin/bash
 
-# Check if the repository is already cloned
-REPO_DIR="CI-and-testing-pipeline"
-
-# If the repository folder doesn't exist, clone the repository
-if [ ! -d "$REPO_DIR" ]; then
-  echo "Repository not found. Cloning repository..."
-  git clone https://github.com/gomezjohn-coder/CI-and-testing-pipeline
-fi
-
-# Navigate into the project directory
-cd "$REPO_DIR" || exit
-
 # Check if Python and pip are installed
 if ! command -v python &>/dev/null; then
     echo "Python is not installed. Please install Python first."
