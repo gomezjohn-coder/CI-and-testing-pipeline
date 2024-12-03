@@ -26,10 +26,12 @@ class TestCalculator(unittest.TestCase):
         self.assertEqual(divide(10, 2), 5)  # Pass
 
     def test_add_fail(self):
-        self.assertEqual(add(10, 5), 20)  # Fail intentionally
+        # Correcting this to pass:
+        self.assertEqual(add(10, 5), 15)
 
     def test_subtract_fail(self):
-        self.assertEqual(subtract(10, 5), 10)  # Fail intentionally
+        # Correcting this to pass:
+        self.assertEqual(subtract(10, 5), 5)
 
 
 # Custom TestResult to suppress traceback for failures
